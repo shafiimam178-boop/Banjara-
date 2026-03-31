@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BANJARA - Traditional Kitchen Store</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #F5E6D3;
+  color: #4B2E2B;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: #4B2E2B;
+  color: white;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background: #C89B3C;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+}
+
+.hero {
+  text-align: center;
+  padding: 20px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.card {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.footer {
+  background: #4B2E2B;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.sticky-buy {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+
+.sticky-buy button {
+  flex: 1;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h2>BANJARA</h2>
+  <div>🛒</div>
+</header>
+
+<section class="hero">
+  <h1>Bring Back the Taste of Tradition</h1>
+  <p>Premium Wood Stoves & Kitchen Essentials</p>
+  <button onclick="scrollToProducts()">Shop Now</button>
+</section>
+
+<section id="products" class="products">
+
+  <div class="card">
+    <img src="https://via.placeholder.com/150" width="100%">
+    <h3>Wood Stove</h3>
+    <p>₹1499</p>
+    <button onclick="addToCart()">Add to Cart</button>
+    <button onclick="whatsappOrder('Wood Stove')">WhatsApp</button>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/150" width="100%">
+    <h3>Clay Oven</h3>
+    <p>₹1999</p>
+    <button onclick="addToCart()">Add to Cart</button>
+    <button onclick="whatsappOrder('Clay Oven')">WhatsApp</button>
+  </div>
+
+</section>
+
+<section style="padding:20px;text-align:center;">
+  <h2>Why Choose Banjara</h2>
+  <p>🔥 Fuel Efficient | 🔩 Durable | 🍲 Traditional Taste</p>
+</section>
+
+<section style="padding:20px;text-align:center;">
+  <h2>About</h2>
+  <p>Banjara brings back India’s traditional cooking style with modern strength.</p>
+</section>
+
+<div class="sticky-buy">
+  <button onclick="checkout()">Buy Now</button>
+  <button onclick="whatsappOrder('Order')">WhatsApp</button>
+</div>
+
+<div class="footer">
+  <p>Contact us on WhatsApp</p>
+</div>
+
+<script>
+function scrollToProducts() {
+  document.getElementById("products").scrollIntoView();
+}
+
+function addToCart() {
+  alert("Added to cart");
+}
+
+function checkout() {
+  alert("Proceed to checkout");
+}
+
+function whatsappOrder(product) {
+  let number = "918092182212"; // replace with your number
+  let message = "I want to order " + product;
+  let url = "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
+  window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
