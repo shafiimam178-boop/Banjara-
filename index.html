@@ -3,171 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BANJARA - Traditional Kitchen Store</title>
-
+<title>Banjara Kitchen Products</title>
 <style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #F5E6D3;
-  color: #4B2E2B;
-}
+/* ==== Reset & Basic Styles ==== */
+body {margin:0; font-family: Arial, sans-serif; background:#f9f9f9; color:#333;}
+a {text-decoration:none; color:inherit;}
+img {max-width:100%; display:block;}
 
-header {
-  position: sticky;
-  top: 0;
-  background: #4B2E2B;
-  color: white;
-  padding: 12px;
-  display: flex;
-  justify-content: space-between;
-}
+/* ==== Header ==== */
+header {background:#8B0000; color:#fff; padding:20px 0; text-align:center;}
+header h1 {margin:0; font-size:2em; letter-spacing:2px;}
 
-button {
-  background: #C89B3C;
-  border: none;
-  padding: 10px;
-  color: white;
-  border-radius: 5px;
-}
+/* ==== Product Grid ==== */
+.products {display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; padding:40px;}
+.product-card {background:#fff; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1); overflow:hidden; text-align:center; transition: transform 0.2s;}
+.product-card:hover {transform: translateY(-5px);}
+.product-card img {width:100%; height:200px; object-fit: cover;}
+.product-card h2 {margin:15px 0 5px; font-size:1.2em; color:#8B0000;}
+.product-card p {margin:0 0 15px; font-weight:bold; font-size:1em; color:#555;}
 
-.hero {
-  text-align: center;
-  padding: 20px;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 10px;
-  padding: 10px;
-  <div class="products">
-
-  <!-- Product 1 -->
-  <div class="card">
-    ...
-  </div>
-
-  <!-- Product 2 -->
-  <div class="card">
-    ...
-  </div>
-
-</div>
-}
-
-.card {
-  background: white;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-.footer {
-  background: #4B2E2B;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-.sticky-buy {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-}
-
-.sticky-buy button {
-  flex: 1;
-}
+/* ==== Footer ==== */
+footer {background:#333; color:#fff; text-align:center; padding:15px 0;}
 </style>
-
 </head>
-
 <body>
 
 <header>
-  <h2>BANJARA</h2>
-  <div>🛒</div>
+  <h1>Banjara Kitchen Products</h1>
 </header>
 
-<section class="hero">
-  <h1>Bring Back the Taste of Tradition</h1>
-  <p>Premium Wood Stoves & Kitchen Essentials</p>
-  <button onclick="scrollToProducts()">Shop Now</button>
+<section class="products">
+  <!-- Product 1 -->
+  <div class="product-card">
+    <img src="woodstove.png.jpg" alt="Wood Stove">
+    <h2>Wood Stove</h2>
+    <p>₹1700</p>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="product-card">
+    <img src="apexstove.png.jpg" alt="Apex Stove">
+    <h2>Apex Stove</h2>
+    <p>₹2200</p>
+  </div>
 </section>
 
-<section id="products" class="products">
-
-<div class="card">
-  <div class="badge">🔥 Trending</div>
-  <img src="woodstove.png.jpg" alt="Banjara Wood Stove">
-  
-  <h3>BANJARA Premium Wood Stove</h3>
-  
-  <p class="price">₹1,999 <span>₹2,499</span></p>
-  
-  <p class="small">✔ Cash on Delivery Available</p>
-  <p class="small">⚡ Limited Stock</p>
-
-  <button class="cart-btn" onclick="addToCart()">Add to Cart</button>
-  <button class="wa-btn" onclick="whatsappOrder('BANJARA Wood Stove')">
-    Order on WhatsApp
-  </button>
-</div>
-
-<div class="card">
-  <img src="apexstove.png.jpg" width="100%" alt="Traditional Clay Oven">
-  <h3>premium Apex stove</h3>
-  <p>₹1,999</p>
-  <button onclick="addToCart()">Add to Cart</button>
-  <button onclick="whatsappOrder('premium Apex stove')">WhatsApp</button>
-</div>
-
-</section>
-
-<section style="padding:20px;text-align:center;">
-  <h2>Why Choose Banjara</h2>
-  <p>🔥 Fuel Efficient | 🔩 Durable | 🍲 Traditional Taste</p>
-</section>
-
-<section style="padding:20px;text-align:center;">
-  <h2>About</h2>
-  <p>Banjara brings back India’s traditional cooking style with modern strength.</p>
-</section>
-
-<div class="sticky-buy">
-  <button onclick="checkout()">Buy Now</button>
-  <button onclick="whatsappOrder('Order')">WhatsApp</button>
-</div>
-
-<div class="footer">
-  <p>Contact us on WhatsApp</p>
-</div>
-
-<script>
-function scrollToProducts() {
-  document.getElementById("products").scrollIntoView();
-}
-
-function addToCart() {
-  alert("Added to cart");
-}
-
-function checkout() {
-  alert("Proceed to checkout");
-}
-
-function whatsappOrder(product) {
-  let number = "918092182212"; // replace with your number
-  let message = "I want to order " + product;
-  let url = "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
-  window.open(url, '_blank');
-}
-</script>
+<footer>
+  &copy; 2026 Banjara. All Rights Reserved.
+</footer>
 
 </body>
 </html>
-
-<a href="https://wa.me/918092182212" class="whatsapp-float">
-  💬
-</a>
